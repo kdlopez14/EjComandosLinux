@@ -1,0 +1,55 @@
+1. Muévete a la carpeta de Sistemas 
+
+2. Crea una carpeta llamada AP32 
+
+mkdir -p sistemas/AP32 
+
+3. Desde esta carpeta, crea cuatro subdirectorios llamados ventas, marketing, desarrollo y direccion. ¿Puedes hacerlo en un solo comando? 
+
+	Sí. mkdir ventas marketing desarrollo direccion 
+
+4. Reflexiona sobre la diferencia entre hacer mkdir a b c y mkdir a/b/c. ¿Qué ocurriría en cada caso? 
+
+	Mkdir a b c: creará tres carpetas; a, b y c 
+
+	Mkdir a/b/c crea la carpeta c en la ruta indicada. La ruta debe existir  
+
+5. Sitúate en la carpeta ventas y crea tres ficheros (enero, febrero y marzo) con cualquier contenido. Puedes utilizar el comando touch que crea un fichero vacío, o bien utilizar un editor de texto como emacs, gedit, nano o vi, o bien con echo y redirigir 
+
+	touch enero.txt febrero.txt marzo.txt 
+
+6. Sitúate en tu carpeta AP32 y copia, en marketing, todos los ficheros deventas. ¿Puedes hacerlo con solo un comando? Verifica que los ficheros han sido copiados. 
+
+	cp ventas/enero.txt ventas/febrero.txt ventas/marzo.txt marketing 
+
+7. Desde marketing, crea un directorio con el nombre del año actual dentro de ventas y copia los tres ficheros anteriores a este directorio. 
+
+	mkdir ../ventas/2026 && cp enero.txt febrero.txt marzo.txt ../ventas/2026 
+
+8. Desde ventas, crea un directorio con el nombre del año anterior y copia los ficheros de marketing que terminen por -ero. 
+
+	mkdir 2025 && cp *ero.txt 2025 
+
+9. Posicionada en desarrollo, copia el contenido de ventas/”año_anterior” en la carpeta desarrollo/ventas_”año_anterior”. 
+
+	mkdir ventas_2025 && cp -r ../ventas/2025 ventas_2025 
+
+10. Posicionada en desarrollo, borra el directorio ventas/”año_anterior”. 
+
+	rm -r ../ventas/2025 
+
+11. Posicionada en la carpeta AP32, renombra la carpeta desarrollo/ventas_”año_anterior” como desarrollo/ventas”año_anterior”. 
+
+	mv desarrollo/ventas_2025 desarrollo/ventas20_25 
+
+12. Posicionada en ventas, renombra el directorio anterior como desarrollo/v_”año_anterior”. 
+
+	mv ../desarrollo/ventas20_25 ../desarrollo/v_2025 
+
+ENTREGA: 
+
+Url de repositorio de GitHub con un documento con los comandos de cada ejercicio.  
+
+zip del repositorio 
+
+ 
